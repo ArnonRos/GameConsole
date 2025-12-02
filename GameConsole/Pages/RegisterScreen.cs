@@ -16,8 +16,8 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
-
             CenterText("Enter Your Desired Details");
+            Console.ReadKey();
         }
     }
 }

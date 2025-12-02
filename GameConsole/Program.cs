@@ -1,4 +1,6 @@
-﻿using GameConsole.Games;
+﻿using GameConsole.App;
+using GameConsole.Base;
+using GameConsole.Games;
 using GameConsole.Interfaces;
 using GameConsole.Pages;
 
@@ -9,10 +11,10 @@ namespace GameConsole
         static void Main(string[] args)
         {
             
-            StartScreen mainScreen = new StartScreen();
-            mainScreen.Show();
-           PacManGame game = new PacManGame();
-            game.Play();
+
+            ConsoleGameApp app = new ConsoleGameApp();
+            app.StartApp();
+
 
             //List<IGamePlay> games = new List<IGamePlay>();
             //games.Add(new Games.TetrisGame());

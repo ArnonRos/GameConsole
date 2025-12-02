@@ -23,6 +23,9 @@ namespace GameConsole.Pages
             CenterText(bob);
 
             Console.ReadKey();
+
+            Screen next = new MainMenu();
+            next.Show();
         }
     }
 

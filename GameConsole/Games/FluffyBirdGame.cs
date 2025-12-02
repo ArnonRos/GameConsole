@@ -1,16 +1,22 @@
 
+using GameConsole.Base;
 using GameConsole.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 
 namespace GameConsole.Games;
-public class FluffyBirdGame : IGamePlay
+public class FluffyBirdGame :  IGamePlay
 {
     public int Score { get; set; }
     public string Name { get; set; } = "Fluffy Bird";
+    public FluffyBirdGame() 
+    {
 
-    public void Play()
+    }
+
+
+    public  void Play()
     {
         const float Gravity = .5f;
         const int PipeWidth = 8;
