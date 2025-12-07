@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameConsole.Pages
 {
-    public class UserDetails : Base.Screen
+    public class UserDetails : Base.MenuScreen
     {
         public UserDetails() : base("USER DETAILS PAGE")
         {
@@ -16,7 +16,7 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
-            Models.User us = App.ConsoleGameApp.user;
+            var us = App.ConsoleGameApp.user;
             CenterText("USER DETAILS");
             CenterText($"Username: {us.Username}");
             CenterText($"Password: {us.Password}");

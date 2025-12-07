@@ -4,28 +4,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace GameConsole.Pages
 {
-    public class StartScreen : Screen
+    internal class ViewDetails : Screen
     {
-        public StartScreen() : base("WELCOME TO FIRST PAGE!")
+        public ViewDetails() : base("View User Details")
         {
-            Show();
         }
-
         public override void Show()
         {
             base.Show();
-
-            String bob = "WELCOME YA MELEH";
-            CenterText(bob);
+            CenterText($"Username: {App.ConsoleGameApp.user.Username}");
+            CenterText($"Email: {App.ConsoleGameApp.user.Password}");;
             Console.ReadKey();
+            CenterText("Press any key to return to the main menu...");
             Screen next = new MainMenu();
             next.Show();
         }
     }
-
-    
 }

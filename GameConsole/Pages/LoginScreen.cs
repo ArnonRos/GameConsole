@@ -23,7 +23,7 @@ namespace GameConsole.Pages
             string username = Console.ReadLine();
             CenterText("Enter your password:");
             string password = Console.ReadLine();
-            Models.User us = UserDb.Login(username, password);
+            var us = UserDb.Login(username, password);
             if (us == null)
             {
                 CenterText("Invalid username or password. Press any key to return to main menu.");
