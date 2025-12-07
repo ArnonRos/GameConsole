@@ -12,7 +12,9 @@ namespace GameConsole.Pages
         public MainMenu() : base("Main Menu")
         {
             Add(new MenuItem("Register", new RegisterScreen()));
-            Add("Login", new LoginScreen());
+            Add(new MenuItem("Login", new LoginScreen()));
+            Add(new MenuItem("Game Menu", new GameMenu()));
+            Add(new MenuItem("User Details", new UserDetails()));
         }
     }
 }

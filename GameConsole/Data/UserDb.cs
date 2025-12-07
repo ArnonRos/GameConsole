@@ -15,7 +15,7 @@ namespace GameConsole.Data
         {
             if (users.Any(u => u.Username == uName))
             {
-                throw new InvalidOperationException("the user exists already");
+                throw new InvalidOperationException("the user exists already, put new netunim");
             }
             User newus = new User(name, uName, password);
             users.Add(newus);
@@ -30,7 +30,7 @@ namespace GameConsole.Data
             if (users.Any(user => user.Username == u.Username))
             {
                 users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Password = u.Password;
-                users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Name = u.Name;
+                users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Username = u.Username;
             }
             else
                 throw new InvalidOperationException("no such user exists");

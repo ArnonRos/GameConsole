@@ -1,4 +1,5 @@
 ﻿using GameConsole.Base;
+using GameConsole.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,16 @@ namespace GameConsole.Pages
         public override void Show()
         {
             base.Show();
-            CenterText("Enter Your Desired Details");
+            CenterText("Enter Your name:");
+            string name = Console.ReadLine();
+            CenterText("enter your username:");
+            string username = Console.ReadLine();
+            CenterText("enter your password:");
+            string password = Console.ReadLine();
+            UserDb.RegisterUser(name, username, password);
             Console.ReadKey();
+            Screen next = new MainMenu();
+            next.Show();
         }
     }
 }

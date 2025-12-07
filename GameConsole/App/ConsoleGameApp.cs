@@ -10,6 +10,7 @@ namespace GameConsole.App
     internal class ConsoleGameApp
     {
         private Screen mainPage;
+        public static Models.User user;
         public ConsoleGameApp()
         {
             this.mainPage = new Pages.StartScreen();
