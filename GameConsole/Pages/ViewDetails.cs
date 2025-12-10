@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace GameConsole.Pages
 {
-    internal class ViewDetails : Screen
+    public class ViewDetails : MenuScreen
+
     {
-        public ViewDetails() : base("View User Details")
+        public ViewDetails() : base("USER DETAILS PAGE")
         {
+
         }
+
         public override void Show()
         {
             base.Show();
-            CenterText($"Username: {App.ConsoleGameApp.user.Username}");
-            CenterText($"Email: {App.ConsoleGameApp.user.Password}");;
+            var us = App.ConsoleGameApp.user;
+            CenterText("USER DETAILS");
+            CenterText($"Username: {us.Username}");
+            CenterText($"Password: {us.Password}");
             Console.ReadKey();
-            CenterText("Press any key to return to the main menu...");
-            Screen next = new MainMenu();
-            next.Show();
         }
     }
-}
+ }
+

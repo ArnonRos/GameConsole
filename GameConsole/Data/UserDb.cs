@@ -10,7 +10,7 @@ namespace GameConsole.Data
 {
     public class UserDb
     {
-        private static List<User> users;
+        private static List<User> users = new List<User>();
         public static User RegisterUser(string name, string uName, string password)
         {
             if (users.Any(u => u.Username == uName))

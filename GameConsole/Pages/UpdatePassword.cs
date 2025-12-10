@@ -1,4 +1,5 @@
-﻿using GameConsole.Base;
+﻿using GameConsole.App;
+using GameConsole.Base;
 using GameConsole.Data;
 using System;
 using System.Collections.Generic;
@@ -8,23 +9,22 @@ using System.Threading.Tasks;
 
 namespace GameConsole.Pages
 {
-    internal class UpdateDetails : Screen
+    internal class UpdatePassword : Screen
     {
-        public UpdateDetails() : base("Update User Details")
+        public UpdatePassword() : base("View User Password")
         {
         }
         public override void Show()
         {
             base.Show();
-            CenterText("Enter new username: ");
-            string newUsername = Console.ReadLine();
             CenterText("Enter new password: ");
             string newPassword = Console.ReadLine();
-            UserDb.Update(new Models.User("", newUsername, newPassword));
-            CenterText("Press any key to return to the main menu...");
+            UserDb.Update(new Models.User(App.ConsoleGameApp.user.Name, App.ConsoleGameApp.user.Username , newPassword));
+            CenterText("Press any key to return to the Profile menu...");
             Console.ReadKey();
-            Screen next = new MainMenu();
+            Screen next = new ProfileMenu();
             next.Show();
+
         }
     }
 }

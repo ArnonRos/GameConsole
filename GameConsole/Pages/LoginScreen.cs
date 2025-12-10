@@ -33,7 +33,7 @@ namespace GameConsole.Pages
             }
             CenterText("Login successful! Press any key to continue.");
             Console.ReadKey();
-            Screen next = new GameMenu();
+            Screen next = new PostLoginMenu();
             next.Show();
         }
     }
