@@ -23,6 +23,8 @@ namespace GameConsole.Pages
             CenterText($"Username: {us.Username}");
             CenterText($"Password: {us.Password}");
             Console.ReadKey();
+            MenuScreen next = new MainMenu();
+            next.Show();
         }
     }
  }

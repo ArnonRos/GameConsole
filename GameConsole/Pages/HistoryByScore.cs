@@ -31,7 +31,7 @@ namespace GameConsole.Pages
             }
             CenterText("Press any key to return to the History Menu...");
             Console.ReadKey();
-            MenuScreen   next = new HistoryMenu();
+            MenuScreen   next = new MainMenu();
             next.Show();
         }
     }

@@ -32,7 +32,7 @@ namespace GameConsole.Pages
             }
             Console.WriteLine("Press any key to return to the main menu...");
             Console.ReadKey();
-            MenuScreen mainMenu = new HistoryMenu();
+            MenuScreen mainMenu = new MainMenu();
             mainMenu.Show();
 
 

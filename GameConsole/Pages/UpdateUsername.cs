@@ -21,7 +21,7 @@ namespace GameConsole.Pages
             UserDb.Update(new Models.User(App.ConsoleGameApp.user.Name, newUsername, App.ConsoleGameApp.user.Password));
             CenterText("Press any key to return to the Profile menu...");
             Console.ReadKey();
-            Screen next = new ProfileMenu();
+            Screen next = new MainMenu();
             next.Show();
 
         }
