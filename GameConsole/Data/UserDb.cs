@@ -15,15 +15,35 @@ namespace GameConsole.Data
         {
             if (users.Any(u => u.Username == uName))
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 throw new InvalidOperationException("the user exists already, put new netunim");
+                Console.ResetColor();
             }
             User newus = new User(name, uName, password);
             users.Add(newus);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("user registered successfully");
+            Console.ResetColor();
             return newus;
         }
         public static User Login(string username, string password)
         {
-             return users.FirstOrDefault(u => u.Username == username && u.Password == password); 
+            if (users.FirstOrDefault(u => u.Username == username && u.Password == password) == null)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("no such user exists");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("user logined successfully");
+                Console.ResetColor();
+            }
+            return users.FirstOrDefault(u => u.Username == username && u.Password == password);
+
+
+
         }
         public static void Update(User u)
         {
@@ -33,7 +53,11 @@ namespace GameConsole.Data
                 users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Username = u.Username;
             }
             else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
                 throw new InvalidOperationException("no such user exists");
+                Console.ResetColor();
+            }
         }
 
     }
