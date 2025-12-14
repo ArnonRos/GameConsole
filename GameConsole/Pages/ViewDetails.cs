@@ -19,9 +19,11 @@ namespace GameConsole.Pages
         {
             base.Show();
             var us = App.ConsoleGameApp.user;
+            Console.ForegroundColor = ConsoleColor.Blue;
             CenterText("USER DETAILS");
             CenterText($"Username: {us.Username}");
             CenterText($"Password: {us.Password}");
+            Console.ResetColor();
             Console.ReadKey();
             MenuScreen next = new MainMenu();
             next.Show();

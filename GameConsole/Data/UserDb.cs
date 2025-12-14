@@ -15,16 +15,29 @@ namespace GameConsole.Data
         {
             if (users.Any(u => u.Username == uName))
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                throw new InvalidOperationException("the user exists already, put new netunim");
+                try
+                {
+                    throw new InvalidOperationException("the user exists already");
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("the user exists already");
+                    Console.ResetColor();
+                }
+
+
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("user registered successfully");
                 Console.ResetColor();
             }
             User newus = new User(name, uName, password);
             users.Add(newus);
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("user registered successfully");
-            Console.ResetColor();
             return newus;
+
         }
         public static User Login(string username, string password)
         {
@@ -51,14 +64,26 @@ namespace GameConsole.Data
             {
                 users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Password = u.Password;
                 users.Where(user => user.Username == u.Username).ToList().FirstOrDefault().Username = u.Username;
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("user registered successfully");
+                Console.ResetColor();
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                throw new InvalidOperationException("no such user exists");
-                Console.ResetColor();
+                try
+                {
+                    throw new InvalidOperationException("the user exists already");
+                }
+                catch
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("the user exists already");
+                    Console.ResetColor();
+                }
             }
-        }
 
+        }
     }
 }
+
+
